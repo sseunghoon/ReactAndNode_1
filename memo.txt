@@ -1,0 +1,27 @@
+<npm>
+
+npm = Node Package Manager
+
+npm init
+package.json 만들기
+
+npm install express --save
+express 설치 --save는 package.json에 기록저장
+
+npm run start
+start는 package.json의 scripts에 node index.js 라고 저장한 것
+run은 script를 실행하라는 뜻인듯
+
+npm install mongoose --save
+mongoDB 툴 다운로드
+
+
+<Git>
+
+git init
+git 저장소 생성
+
+.gitignore 파일 생성 후 폴더명 적으면 git commit에 반영 안 됨
+
+git rm --cached node_modules
+git add에 반영된 node_modules 폴더를 제거해 달라는 뜻
