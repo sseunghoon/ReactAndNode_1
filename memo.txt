@@ -21,7 +21,17 @@ mongoDB 툴 다운로드
 git init
 git 저장소 생성
 
-.gitignore 파일 생성 후 폴더명 적으면 git commit에 반영 안 됨
+.gitignore 파일 생성 후 폴더명 적으면 git add에 반영 안 됨
+
+git add
+commit 리스트에 올린다는 뜻
+
+git status
+commit 대기파일 체크
+
+git commit -m 'message'
+커밋과 함께 커밋 메세지 작성
+
 
 git rm --cached node_modules
 git add에 반영된 node_modules 폴더를 제거해 달라는 뜻
