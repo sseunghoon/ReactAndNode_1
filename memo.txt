@@ -36,4 +36,4 @@ git commit -m 'message'
 git rm --cached node_modules
 git add에 반영된 node_modules 폴더를 제거해 달라는 뜻
 
-push 123
+ush 123
