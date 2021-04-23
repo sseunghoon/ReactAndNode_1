@@ -1,0 +1,24 @@
+{
+  "name": "reactandnode_2try",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/sseunghoon/ReactAndNode_1.git"
+  },
+  "author": "sseunghoon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sseunghoon/ReactAndNode_1/issues"
+  },
+  "homepage": "https://github.com/sseunghoon/ReactAndNode_1#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.5"
+  }
+}
