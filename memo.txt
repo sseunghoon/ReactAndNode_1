@@ -5,6 +5,11 @@ mongoDB URI 같이 GitHub에 올라가면 안되는 소스들은 따로 모아�
 heroku에 입력해야 되서 develop version과 production version을 따로 관리
 ==>dev.js와 prod.js로 구분 
 
+auth기능이란?(Authentication)
+글쓰기나 페이지 조회를 할 수 있는 권한이 있는 사람인지 계속 체크하는 것
+원리)
+Cookie에 저장된 Token은 userID + JWT 가 인코딩 된 것
+그래서 역으로 Token - JWT 복호화를 해서 Server의 userID와 계속 비교
 
 ========================================================
 ========================================================
@@ -41,32 +46,40 @@ goorm ide에서 파일을 열라는 명령어
 
 npm = Node Package Manager
 
-npm init
+1. npm init
 package.json 만들기
 
-npm install express --save
+2. npm install express --save
 express 설치 --save는 package.json에 기록저장
 
-npm run start
+3. npm run start
 start는 package.json의 scripts에 node index.js 라고 저장한 것
 run은 script를 실행하라는 뜻인듯
 
-npm install mongoose --save
+4. npm install mongoose --save
 mongoDB 툴 다운로드
 
+
+5. npm install body-parser --save
 body-parser를 통해 Client가 Server로 보내는 Request
 (JSON, buffer, string, and URL encoded data)들을 받을 수 가 있음
-npm install body-parser --save
++Client에서 request를 줘야 하는데 현재 Client가 없으니 POSTMAN을 이용해서 request를 보냄
 
-Client에서 request를 줘야 하는데 현재 Client가 없으니 POSTMAN을 이용해서 request를 보냄
-
-npm install nodemnon --save-dev
+6. npm install nodemnon --save-dev
 서버를 재시작하지 않더라도 수정내용이 deploy될 수 있도록 하는 툴
 -dev를 붙이는 이유는 develop mode 즉 로컬에서만 돌리도록 설정하는 것이다.
 근데 그러면 online ide에서는 어떻게 될까??
 =>online ide를 로컬로 인식하는지 수정사항이 실시간 deploy된다
-
 +)package.json에서 node index.js 말고 nodemon index.js로 따로 script를 만든 후 run 했음
+
+7. npm install bcrypt --save
+비밀번호 암호화 라이브러리
+
+8. npm install jsonwebtoken --save
+로그인한 사용자에게 토큰을 주기 위한 라이브러리
+
+9. npm install cookie-parser --save
+사용자 토큰을 쿠키에 저장하기 위한 라이브러리
 
 ========================================================
 ========================================================

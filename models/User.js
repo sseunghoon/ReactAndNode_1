@@ -1,4 +1,8 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
+//salt를 10글자로 설정함
+const saltRounds = 10
+const jwt = require('jsonwebtoken')
 
 const userSchema = mongoose.Schema({
 	name:{
@@ -9,6 +13,10 @@ const userSchema = mongoose.Schema({
 		type:String,
 		trim:true, //입력 문자에서 공백을 없애주는 것 ex)나는 송승훈 => 나는송승훈
 		unique:1
+	},
+	password:{
+		type:String,
+		minlength:5
 	},
 	lastname:{
 		type:String,
@@ -30,7 +38,59 @@ const userSchema = mongoose.Schema({
 	}
 })
 
+//index.js 의 /register router에서 save가 실행되기 전에 실행
+userSchema.pre('save',function(next){
+	var user = this
+	
+	//클라이언트가 이메일을 수정할 때도 비밀번호가 암호화가 되면 안되니
+	//비밀번호를 수정할 때만 비밀번호가 암호화 되도록 설정
+	
+	if(user.isModified('password')){
+		//비밀번호를 암호화 시킨다.
+		bcrypt.genSalt(saltRounds,function(err,salt){
+			if(err) return next(err)
+		
+			bcrypt.hash(user.password,salt,function(err,hash){
+				if(err) return next(err)
+			
+				user.password = hash
+				next()
+			})
+		})	
+	} else{
+		next()
+	}
+})
+
+userSchema.methods.comparePassword=function(plainPassword,cb){
+	bcrypt.compare(plainPassword, this.password, function(err,isMatch){
+		if(err) return cb(err)
+		
+		cb(null,isMatch)
+	})	
+}
+
+userSchema.methods.generateToken=function(cb){
+	var user=this
+	
+	//secretToken은 아무의미 없음
+	var token = jwt.sign(user._id.toHexString(),'secretToken')
+	
+	user.token=token
+	user.save(function(err,user){
+		if(err) return cb(err)
+		cb(null,user)
+	})
+}
+
+
 const User = mongoose.model('User',userSchema)
 
 module.exports ={User}
 //다른 파일에서도 쓸 수 있게 exports
+
+
+
+
+
+
