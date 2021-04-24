@@ -11,6 +11,11 @@ auth기능이란?(Authentication)
 Cookie에 저장된 Token은 userID + JWT 가 인코딩 된 것
 그래서 역으로 Token - JWT 복호화를 해서 Server의 userID와 계속 비교
 
+React에 대해서
+1. Library 중 하나
+2. module과 비슷하게 컴포넌트로 이뤄져 있어서 재사용성이 뛰어남.
+3. Virtual DOM
+
 ========================================================
 ========================================================
 ========================================================
@@ -80,6 +85,24 @@ body-parser를 통해 Client가 Server로 보내는 Request
 
 9. npm install cookie-parser --save
 사용자 토큰을 쿠키에 저장하기 위한 라이브러리
+
+10. npx create-react-app .
+react app 다운로드
+
+11. npm vs npx
+npm install 하면 다 로컬, node_modules에 다운받아지고 package.json에 기록을 했는데
+npm install -g 를 쓰면 global, windows면 /bin에 다운 받아짐 (컴퓨터에 받아짐)
+(근데 지금까지 로컬이 개인컴퓨터를 말하는 줄 알았는데 아니였나 봄)
+어쨌든 원래는 npm install -g create-react-app을 썼는데 (global 디렉토리에 다운)
+npx를 이용하면 create-react-app을 이용할 수 있다
+(설명을 들어보니 로컬은 개인 컴퓨터 안에 있는 git 저장소를 말하는 것 같음)
+(local의 반댓말은 remote 인가?)
+npx이 npm registry에서 create-react-app을 찾아서 다운로드 없이 실행 시켜준다고 한다.
+덕분에
+1. Disk Space를 낭비하지 않을 수 있다.
+2. 항상 최신 버전을 사용할 수 있다.
+==> 나중에 이해할 수 있을 듯. 지금은 걍 넘어가
+
 
 ========================================================
 ========================================================
