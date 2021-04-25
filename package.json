@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "backend": "nodemon server/index.js",
+    "start": "export PORT=5000 && node server/index.js",
+    "backend": "export PORT=5000 && nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -3,3 +3,16 @@
 2. npm install install axios --save
 클라이언트에서 서버로 데이터를 보낼 때 쓰는 라이브러리
 jQuery에서 Ajax 같은 것
+
+3. Client(React)와 Server(Node)의 port가
+3000으로 겹친 문제 해결 ==> package.json의 start script에
+export PORT=5000 && 를 추가한다. (Linux의 경우)
+set PORT=5000 && 를 추가한다. (Window의 경우)
+
+4. npm install http-proxy-middleware --save
+
+5. 210425 오늘의 교훈, 진짜 진짜 생각보다 온라인 IDE가
+그냥 로컬 개발환경이랑 다를게 없다. 문제 해결방법이 인터넷에 없고
+진짜 모르겠다면 그냥 아주 조그마한 오타일 확률이 크다.
++ 온라인 IDE에서 디버깅 하는 것을 빨리 배워야 겠다.
+디버깅 단축기 누르는데 왜 생각하는게 안뜨지 했는데 그게 디버깅인듯
