@@ -1,0 +1,5 @@
+1. npm install react-router-dom --save
+
+2. npm install install axios --save
+클라이언트에서 서버로 데이터를 보낼 때 쓰는 라이브러리
+jQuery에서 Ajax 같은 것

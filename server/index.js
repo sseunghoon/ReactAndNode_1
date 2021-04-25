@@ -24,6 +24,11 @@ mongoose.connect(config.mongoURI, {
 
 app.get('/',(req,res)=>res.send('Hello World!123수정내용')) // router 생성
 
+app.get('/api/hello',(req,res)=> {
+	res.send("안녕하세요~")
+})
+
+
 // endPoint가 /register, callBack funtion이 request, response
 app.post('/api/users/register', (req, res) => { 
 	
